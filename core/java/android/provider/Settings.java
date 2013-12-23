@@ -3777,15 +3777,17 @@ public final class Settings {
                 "mute_annoying_notifications_threshold";
 
         /**
-         * Screw'd Settings start
-         */
-
-
-        /**
          *  Enable flashlight notification
          * @hide
          */
         public static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
+
+		/**
+         * Volume key controls ringtone or media sound stream
+         *
+         * @hide
+         */
+        public static final String VOLUME_KEYS_CONTROL_MEDIA_STREAM = "volume_keys_control_media_stream";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
