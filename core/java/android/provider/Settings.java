@@ -3779,6 +3779,19 @@ public final class Settings {
                 "mute_annoying_notifications_threshold";
 
         /**
+		 * Whether to display app circle sidebar
+         * @hide
+         */
+        public static final String ENABLE_APP_CIRCLE_BAR = "enable_app_circle_bar";
+
+        /**
+         * A list of packages to include in app circle bar.
+         * This should be a string of packages separated by |
+         * @hide
+         */
+        public static final String WHITELIST_APP_CIRCLE_BAR = "whitelist_app_circle_bar";
+
+        /**
          *  Enable flashlight notification
          * @hide
          */
