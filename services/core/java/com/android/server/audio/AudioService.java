@@ -722,6 +722,7 @@ public class AudioService extends IAudioService.Stub {
         intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
 
         intentFilter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
+        intentFilter.addAction(Intent.ACTION_SHUTDOWN);
         // TODO merge orientation and rotation
         mMonitorOrientation = SystemProperties.getBoolean("ro.audio.monitorOrientation", false);
         if (mMonitorOrientation) {
@@ -5668,6 +5669,8 @@ public class AudioService extends IAudioService.Stub {
                         state == BluetoothAdapter.STATE_TURNING_OFF) {
                     disconnectAllBluetoothProfiles();
                 }
+            } else if (action.equals(Intent.ACTION_SHUTDOWN)) {
+                AudioSystem.setParameters("dev_shutdown=true");
             }
         }
     } // end class AudioServiceBroadcastReceiver
