@@ -43,4 +43,7 @@
   
   <!-- Notification icon/text dynamic tint -->
   <java-symbol type="bool" name="config_allowNotificationIconTextTinting" />
+  
+  <!-- Screenrecord -->
+  <java-symbol type="bool" name="config_enableScreenrecordChord" />
 </resources>
