@@ -3585,6 +3585,11 @@ public final class Settings {
          */
         public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
 
+       /**
+        * USB Data automatic unlock
+        */
+       public static final String USB_DATA_AUTO_UNLOCK = "usb_data_auto_unlock";
+
         /**
 		 * Whether to hide the clock, show it in the right or left
          * position or show it in the center
