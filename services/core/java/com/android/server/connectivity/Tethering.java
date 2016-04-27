@@ -70,6 +70,7 @@ import com.android.internal.util.Protocol;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 import com.android.server.IoThread;
+import com.android.server.NetPluginDelegate;
 import com.android.server.net.BaseNetworkObserver;
 
 import java.io.FileDescriptor;
@@ -1734,6 +1735,8 @@ public class Tethering extends BaseNetworkObserver {
                 }
 
                 if (upType != ConnectivityManager.TYPE_NONE) {
+                    Network network = getConnectivityManager().getNetworkForType(upType);
+                    NetPluginDelegate.setUpstream(network);
                     LinkProperties linkProperties =
                             getConnectivityManager().getLinkProperties(upType);
                     if (linkProperties != null) {
@@ -1752,7 +1755,6 @@ public class Tethering extends BaseNetworkObserver {
                     }
 
                     if (iface != null) {
-                        Network network = getConnectivityManager().getNetworkForType(upType);
                         if (network == null) {
                             Log.e(TAG, "No Network for upstream type " + upType + "!");
                         }
