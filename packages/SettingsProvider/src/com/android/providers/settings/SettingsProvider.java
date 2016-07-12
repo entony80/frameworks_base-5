@@ -1207,6 +1207,15 @@ public class SettingsProvider extends ContentProvider {
                 restriction = UserManager.DISALLOW_SAFE_BOOT;
                 break;
 
+            case Settings.Secure.ALWAYS_ON_VPN_APP:
+            case Settings.Secure.ALWAYS_ON_VPN_LOCKDOWN:
+                // Whitelist system uid (ConnectivityService) and root uid to change always-on vpn
+                if (callingUid == Process.SYSTEM_UID || callingUid == Process.ROOT_UID) {
+                    return false;
+                }
+                restriction = UserManager.DISALLOW_CONFIG_VPN;
+                break;
+
             default:
                 if (setting != null && setting.startsWith(Settings.Global.DATA_ROAMING)) {
                     if ("0".equals(value)) return false;
