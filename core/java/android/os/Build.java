@@ -157,6 +157,12 @@ public class Build {
          * or a git hash.
          */
         public static final String INCREMENTAL = getString("ro.build.version.incremental");
+		
+		/**
+		 * The internal value used by vendor config for the current CypherOS
+		 * version.
+		 */
+		public static final String VERSION = getString("ro.cypher.version");
 
         /**
          * The user-visible version string.  E.g., "1.0" or "3.4b5".
