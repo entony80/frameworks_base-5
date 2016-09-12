@@ -49,6 +49,9 @@ public class Build {
 
     /** The name of the underlying board, like "goldfish". */
     public static final String BOARD = getString("ro.product.board");
+	
+	/** The CypherOS build version */
+    public static final String VERSION = getString("ro.cypher.version");
 
     /**
      * The name of the instruction set (CPU type + ABI convention) of native code.
