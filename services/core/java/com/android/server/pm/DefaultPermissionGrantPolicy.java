@@ -716,6 +716,7 @@ final class DefaultPermissionGrantPolicy {
             if (fiPackage != null) {
                 grantRuntimePermissionsLPw(fiPackage, CONTACTS_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(fiPackage, PHONE_PERMISSIONS, userId);
+		        grantRuntimePermissionsLPw(fiPackage, MICROPHONE_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(fiPackage, LOCATION_PERMISSIONS, userId);
                 grantRuntimePermissionsLPw(fiPackage, SMS_PERMISSIONS, userId);
             }
