@@ -320,7 +320,7 @@ final class Settings {
         public void forceCurrent() {
             sdkVersion = Build.VERSION.SDK_INT;
             databaseVersion = CURRENT_DATABASE_VERSION;
-            fingerprint = Build.VERSION;
+            fingerprint = Build.CYPHER;
         }
     }
 
@@ -2945,7 +2945,7 @@ final class Settings {
         // on update drop the files before loading them.
         if (PackageManagerService.CLEAR_RUNTIME_PERMISSIONS_ON_UPGRADE) {
             final VersionInfo internal = getInternalVersion();
-            if (!Build.VERSION.equals(internal.fingerprint)) {
+            if (!Build.CYPHER.equals(internal.fingerprint)) {
                 for (UserInfo user : users) {
                     mRuntimePermissionsPersistence.deleteUserRuntimePermissionsFile(user.id);
                 }
@@ -4932,7 +4932,7 @@ final class Settings {
         }
 
         public void onDefaultRuntimePermissionsGrantedLPr(int userId) {
-            mFingerprints.put(userId, Build.VERSION);
+            mFingerprints.put(userId, Build.CYPHER);
             writePermissionsForUserAsyncLPr(userId);
         }
 
@@ -5095,7 +5095,7 @@ final class Settings {
                 serializer.endDocument();
                 destination.finishWrite(out);
 
-                if (Build.VERSION.equals(fingerprint)) {
+                if (Build.CYPHER.equals(fingerprint)) {
                     mDefaultPermissionsGranted.put(userId, true);
                 }
             // Any error while writing is fatal.
@@ -5204,7 +5204,7 @@ final class Settings {
                     case TAG_RUNTIME_PERMISSIONS: {
                         String fingerprint = parser.getAttributeValue(null, ATTR_FINGERPRINT);
                         mFingerprints.put(userId, fingerprint);
-                        final boolean defaultsGranted = Build.VERSION.equals(fingerprint);
+                        final boolean defaultsGranted = Build.CYPHER.equals(fingerprint);
                         mDefaultPermissionsGranted.put(userId, defaultsGranted);
                     } break;
 

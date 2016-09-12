@@ -51,7 +51,7 @@ public class Build {
     public static final String BOARD = getString("ro.product.board");
 	
 	/** The CypherOS build version */
-    public static final String VERSION = getString("ro.cypher.version");
+    public static final String CYPHER = getString("ro.cypher.version");
 
     /**
      * The name of the instruction set (CPU type + ABI convention) of native code.
