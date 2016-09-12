@@ -36,5 +36,5 @@
     <!-- ADB over USB and network notification -->
     <string name="adb_both_active_notification_title">ADB su USB &amp; rete abilitata</string>
     <!-- ADB notification message-->
-    <string name="adb_active_generic_notification_message">Touch to disable debugging.</string>
+    <string name="adb_active_generic_notification_message">Tocca per disattivare il debug.</string>
 </resources>
