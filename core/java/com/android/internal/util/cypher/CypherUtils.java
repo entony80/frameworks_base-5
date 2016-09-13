@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.screwd;
+package com.android.internal.util.cypher;
 
 import android.content.Context;
 import android.hardware.camera2.CameraAccessException;
