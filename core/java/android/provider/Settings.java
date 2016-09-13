@@ -3698,12 +3698,6 @@ public final class Settings {
         */
        public static final String USB_DATA_AUTO_UNLOCK = "usb_data_auto_unlock";
 
-	/**
-         * Whether the phone volume up / down effect should be played
-         * @hide
-         */
-        public static final String VOLUME_ADJUST_SOUNDS_ENABLED = "volume_adjust_sounds_enabled";
-
         /**
 		 * Whether to hide the clock, show it in the right or left
          * position or show it in the center
