@@ -275,9 +275,6 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
             actionsArray = mActions.split("\\|");
         }
 
-        // Always add the power off option
-        mItems.add(new PowerAction());
-
         ArraySet<String> addedKeys = new ArraySet<String>();
         for (int i = 0; i < actionsArray.length; i++) {
             String actionKey = actionsArray[i];
@@ -286,7 +283,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
                 continue;
             }
             if (GLOBAL_ACTION_KEY_POWER.equals(actionKey)) {
-                continue;
+                mItems.add(new PowerAction());
             } else if (GLOBAL_ACTION_KEY_REBOOT.equals(actionKey)) {
                 mItems.add(new RebootAction());
             } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
