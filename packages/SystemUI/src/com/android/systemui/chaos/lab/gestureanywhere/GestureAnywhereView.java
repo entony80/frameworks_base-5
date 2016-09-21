@@ -81,19 +81,19 @@ public class GestureAnywhereView extends TriggerOverlayView implements GestureOv
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_ENABLED), false, this);
+                    Settings.System.LAUNCH_GESTURES_ENABLED), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_POSITION), false, this);
+                    Settings.System.LAUNCH_GESTURES_POSITION), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_CHANGED), false, this);
+                    Settings.System.LAUNCH_GESTURES_CHANGED), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_TRIGGER_WIDTH), false, this);
+                    Settings.System.LAUNCH_GESTURES_TRIGGER_WIDTH), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_TRIGGER_TOP), false, this);
+                    Settings.System.LAUNCH_GESTURES_TRIGGER_TOP), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_TRIGGER_HEIGHT), false, this);
+                    Settings.System.LAUNCH_GESTURES_TRIGGER_HEIGHT), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GESTURE_ANYWHERE_SHOW_TRIGGER), false, this);
+                    Settings.System.LAUNCH_GESTURES_SHOW_TRIGGER), false, this);
             update();
         }
 
@@ -110,29 +110,29 @@ public class GestureAnywhereView extends TriggerOverlayView implements GestureOv
             ContentResolver resolver = mContext.getContentResolver();
 
             boolean enabled = Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_ENABLED, 0) == 1;
+                    resolver, Settings.System.LAUNCH_GESTURES_ENABLED, 0) == 1;
             setVisibility(enabled ? View.VISIBLE : View.GONE);
 
             int position = Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_POSITION, Gravity.LEFT);
+                    resolver, Settings.System.LAUNCH_GESTURES_POSITION, Gravity.LEFT);
             setPosition(position);
 
             long gestureChangedTime = Settings.System.getLong(resolver,
-                    Settings.System.GESTURE_ANYWHERE_CHANGED, System.currentTimeMillis());
+                    Settings.System.LAUNCH_GESTURES_CHANGED, System.currentTimeMillis());
             if (mGestureLoadedTime < gestureChangedTime) {
                 reloadGestures();
             }
 
             int width = Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_TRIGGER_WIDTH, 10);
+                    resolver, Settings.System.LAUNCH_GESTURES_TRIGGER_WIDTH, 10);
             if (mTriggerWidth != width)
                 setTriggerWidth(width);
             setTopPercentage(Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_TRIGGER_TOP, 0) / 100f);
+                    resolver, Settings.System.LAUNCH_GESTURES_TRIGGER_TOP, 0) / 100f);
             setBottomPercentage(Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_TRIGGER_HEIGHT, 100) / 100f);
+                    resolver, Settings.System.LAUNCH_GESTURES_TRIGGER_HEIGHT, 100) / 100f);
             mTriggerVisible = Settings.System.getInt(
-                    resolver, Settings.System.GESTURE_ANYWHERE_SHOW_TRIGGER, 0) == 1;
+                    resolver, Settings.System.LAUNCH_GESTURES_SHOW_TRIGGER, 0) == 1;
             if (mTriggerVisible)
                 showTriggerRegion();
             else
@@ -235,9 +235,9 @@ public class GestureAnywhereView extends TriggerOverlayView implements GestureOv
         mViewHeight = getWindowHeight();
         final ContentResolver resolver = mContext.getContentResolver();
         setTopPercentage(Settings.System.getInt(
-                resolver, Settings.System.GESTURE_ANYWHERE_TRIGGER_TOP, 0) / 100f);
+                resolver, Settings.System.LAUNCH_GESTURES_TRIGGER_TOP, 0) / 100f);
         setBottomPercentage(Settings.System.getInt(
-                resolver, Settings.System.GESTURE_ANYWHERE_TRIGGER_HEIGHT, 100) / 100f);
+                resolver, Settings.System.LAUNCH_GESTURES_TRIGGER_HEIGHT, 100) / 100f);
     }
 
     public void setStatusBar(BaseStatusBar bar) {

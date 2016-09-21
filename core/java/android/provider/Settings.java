@@ -3837,14 +3837,14 @@ public final class Settings {
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_ENABLED = "gesture_anywhere_enabled";
+        public static final String LAUNCH_GESTURES_ENABLED = "launch_gestures_enabled";
 
         /**
          * Position of gesture anywhere trigger.  Value is either Gravity.LEFT or Gravity.RIGHT
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_POSITION = "gesture_anywhere_position";
+        public static final String LAUNCH_GESTURES_POSITION = "launch_gestures_position";
 
         /**
          * Last time gestures were altered.
@@ -3852,28 +3852,28 @@ public final class Settings {
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_CHANGED = "gesture_anywhere_changed";
+        public static final String LAUNCH_GESTURES_CHANGED = "launch_gestures_changed";
 
         /**
          * Width of the gesture anywhere trigger.
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_TRIGGER_WIDTH = "gesture_anywhere_trigger_width";
+        public static final String LAUNCH_GESTURES_TRIGGER_WIDTH = "launch_gestures_trigger_width";
 
         /**
          * Position of gesture anywhere trigger.
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_TRIGGER_TOP = "gesture_anywhere_trigger_top";
+        public static final String LAUNCH_GESTURES_TRIGGER_TOP = "launch_gestures_trigger_top";
 
         /**
          * Height of the gesture anywhere trigger.
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_TRIGGER_HEIGHT = "gesture_anywhere_trigger_height";
+        public static final String LAUNCH_GESTURES_TRIGGER_HEIGHT = "launch_gestures_trigger_height";
 
         /**
          * Whether to display the gesture anywhere trigger region or not.
@@ -3881,7 +3881,7 @@ public final class Settings {
          * @hide
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
-        public static final String GESTURE_ANYWHERE_SHOW_TRIGGER = "gesture_anywhere_show_trigger";
+        public static final String LAUNCH_GESTURES_SHOW_TRIGGER = "launch_gestures_show_trigger";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
