@@ -31,10 +31,19 @@
     <!-- Reboot Progress Dialog. This is shown if the user chooses to reboot the phone. -->
     <string name="reboot_progress">Riavvio\u2026</string>
 
+    <!-- Global Actions -->
+    <string name="global_action_current_user">Corrente</string>
+    <string name="global_action_screenshot">Screenshot</string>
+    <string name="global_action_screen_record">Registra schermo</string>
+    <string name="global_action_search">Ricerca</string>
+    <string name="global_action_voicesearch">Ricerca vocale</string>
+    
     <!-- ADB over network notification -->
     <string name="adb_net_active_notification_title">ADB rete abilitata</string>
     <!-- ADB over USB and network notification -->
     <string name="adb_both_active_notification_title">ADB su USB &amp; rete abilitata</string>
     <!-- ADB notification message-->
     <string name="adb_active_generic_notification_message">Tocca per disattivare il debug.</string>
+    
+    <string name="default_string">Predefinito</string>
 </resources>
