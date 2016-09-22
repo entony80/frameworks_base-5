@@ -3882,6 +3882,12 @@ public final class Settings {
          */
         @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_FIELD)
         public static final String LAUNCH_GESTURES_SHOW_TRIGGER = "launch_gestures_show_trigger";
+		
+		/**
+         * Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
