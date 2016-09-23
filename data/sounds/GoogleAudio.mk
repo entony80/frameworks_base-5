@@ -60,14 +60,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)material/notifications/Ariel.ogg:system/media/audio/notifications/Ariel.ogg \
     $(LOCAL_PATH)material/notifications/Carme.ogg:system/media/audio/notifications/Carme.ogg \
     $(LOCAL_PATH)material/notifications/Ceres.ogg:system/media/audio/notifications/Ceres.ogg \
+	$(LOCAL_PATH)material/notifications/Ding.ogg:system/media/audio/notifications/Ding.ogg \
     $(LOCAL_PATH)material/notifications/Elara.ogg:system/media/audio/notifications/Elara.ogg \
     $(LOCAL_PATH)material/notifications/Europa.ogg:system/media/audio/notifications/Europa.ogg \
     $(LOCAL_PATH)material/notifications/Iapetus.ogg:system/media/audio/notifications/Iapetus.ogg \
     $(LOCAL_PATH)material/notifications/Io.ogg:system/media/audio/notifications/Io.ogg \
+	$(LOCAL_PATH)material/notifications/Magihz.ogg:system/media/audio/notifications/Magihz.ogg \
     $(LOCAL_PATH)material/notifications/Rhea.ogg:system/media/audio/notifications/Rhea.ogg \
     $(LOCAL_PATH)material/notifications/Salacia.ogg:system/media/audio/notifications/Salacia.ogg \
     $(LOCAL_PATH)material/notifications/Tethys.ogg:system/media/audio/notifications/Tethys.ogg \
     $(LOCAL_PATH)material/notifications/Titan.ogg:system/media/audio/notifications/Titan.ogg \
+	$(LOCAL_PATH)material/notifications/Wimock.ogg:system/media/audio/notifications/Wimock.ogg \
     $(LOCAL_PATH)material/ringtones/Atria.ogg:system/media/audio/ringtones/Atria.ogg \
     $(LOCAL_PATH)material/ringtones/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
     $(LOCAL_PATH)material/ringtones/Dione.ogg:system/media/audio/ringtones/Dione.ogg \
