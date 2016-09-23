@@ -188,8 +188,6 @@ public class NotificationPanelView extends PanelView implements
     private boolean mQsTouchAboveFalsingThreshold;
     private int mQsFalsingThreshold;
 
-    private Handler mHandler = new Handler();
-    private SettingsObserver mSettingsObserver;
     private boolean mOneFingerQuickSettingsIntercept;
 
     private float mKeyguardStatusBarAnimateAlpha = 1f;
@@ -381,16 +379,6 @@ public class NotificationPanelView extends PanelView implements
             mQsContainer.setHeightOverride(mQsContainer.getDesiredHeight());
         }
         updateMaxHeadsUpTranslation();
-    }
-	
-	@Override
-    public void onAttachedToWindow() {
-        mSettingsObserver.observe();
-    }
-
-    @Override
-    public void onDetachedFromWindow() {
-        mSettingsObserver.unobserve();
     }
 
     private void startQsSizeChangeAnimation(int oldHeight, final int newHeight) {
