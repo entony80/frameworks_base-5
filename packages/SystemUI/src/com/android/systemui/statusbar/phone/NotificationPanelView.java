@@ -188,8 +188,6 @@ public class NotificationPanelView extends PanelView implements
     private boolean mQsTouchAboveFalsingThreshold;
     private int mQsFalsingThreshold;
 
-    private boolean mOneFingerQuickSettingsIntercept;
-
     private float mKeyguardStatusBarAnimateAlpha = 1f;
     private int mOldLayoutDirection;
     private HeadsUpTouchHelper mHeadsUpTouchHelper;
@@ -220,6 +218,7 @@ public class NotificationPanelView extends PanelView implements
 
     private boolean mDoubleTapToSleepAnywhere;
     private boolean mDoubleTapToSleepEnabled;
+	private int mOneFingerQuickSettingsIntercept;
 	private int mQsSmartPullDown;
     private int mStatusBarHeaderHeight;
     private GestureDetector mDoubleTapGesture;
@@ -839,7 +838,8 @@ public class NotificationPanelView extends PanelView implements
             mTwoFingerQsExpandPossible = true;
         }
         if (mTwoFingerQsExpandPossible && isOpenQsEvent(event)
-                && event.getY(event.getActionIndex()) < mStatusBarMinHeight) {
+                && event.getY(event.getActionIndex()) < mStatusBarMinHeight
+                && mExpandedHeight <= mQsPeekHeight) {
             MetricsLogger.count(mContext, COUNTER_PANEL_OPEN_QS, 1);
             mQsExpandImmediate = true;
             requestPanelHeightUpdate();
@@ -883,7 +883,25 @@ public class NotificationPanelView extends PanelView implements
                 showQsOverride = true;
         }
 
-        return oneFingerDrag || twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
+        final float w = getMeasuredWidth();
+        final float x = event.getX();
+        float region = (w * (1.f/4.f)); // TODO overlay region fraction?
+        boolean showQsOverride = false;
+
+        switch (mOneFingerQuickSettingsIntercept) {
+            case 1: // Right side pulldown
+                showQsOverride = isLayoutRtl() ? (x < region) : (w - region < x);
+                break;
+            case 2: // Left side pulldown
+                showQsOverride = isLayoutRtl() ? (w - region < x) : (x < region);
+                break;
+            case 3: // pull down anywhere
+                showQsOverride = true;
+                break;
+        }
+        showQsOverride &= mStatusBarState == StatusBarState.SHADE;
+
+        return twoFingerDrag || showQsOverride || stylusButtonClickDrag || mouseButtonClickDrag;
     }
 
     private void handleQsDown(MotionEvent event) {
@@ -2427,8 +2445,8 @@ public class NotificationPanelView extends PanelView implements
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN), false, this);
-			resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN), false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE), false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE), false, this, UserHandle.USER_ALL);
@@ -2454,8 +2472,9 @@ public class NotificationPanelView extends PanelView implements
 
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
-            mOneFingerQuickSettingsIntercept = Settings.System.getInt(
-                    resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1) == 1;
+            mOneFingerQuickSettingsIntercept = Settings.System.getIntForUser(
+                    resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1,
+                    UserHandle.USER_CURRENT);
 			mDoubleTapToSleepEnabled = Settings.System.getIntForUser(resolver,
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT) == 1;
             mDoubleTapToSleepAnywhere = Settings.System.getIntForUser(resolver,
