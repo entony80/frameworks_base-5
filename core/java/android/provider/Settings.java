@@ -3669,6 +3669,12 @@ public final class Settings {
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+		
+		/**
+         * Quick Settings nougat animation
+         * @hide
+         */
+        public static final String QS_FANCY_ANIMATION = "qs_fancy_animation";
 
         /**
          * What color to use for the battery LED while charging - medium
