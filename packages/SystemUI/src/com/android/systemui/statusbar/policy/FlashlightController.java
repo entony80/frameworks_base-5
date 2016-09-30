@@ -17,6 +17,9 @@
 package com.android.systemui.statusbar.policy;
 
 import android.content.Context;
+import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
@@ -26,6 +29,11 @@ import android.os.Process;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+
+import com.android.systemui.R;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
