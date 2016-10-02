@@ -859,11 +859,13 @@ public class NotificationPanelView extends PanelView implements
     }
 
     private boolean isOpenQsEvent(MotionEvent event) {
+        boolean showQsOverride = false;
+
         final int pointerCount = event.getPointerCount();
         final int action = event.getActionMasked();
 
         final boolean oneFingerDrag = action == MotionEvent.ACTION_DOWN
-                && mOneFingerQuickSettingsIntercept && shouldQuickSettingsIntercept
+                && mOneFingerQuickSettingsIntercept != 0 && shouldQuickSettingsIntercept
                         (event.getX(), event.getY(), -1, false);
 
         final boolean twoFingerDrag = action == MotionEvent.ACTION_POINTER_DOWN
@@ -886,7 +888,6 @@ public class NotificationPanelView extends PanelView implements
         final float w = getMeasuredWidth();
         final float x = event.getX();
         float region = (w * (1.f/4.f)); // TODO overlay region fraction?
-        boolean showQsOverride = false;
 
         switch (mOneFingerQuickSettingsIntercept) {
             case 1: // Right side pulldown

@@ -1913,7 +1913,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     protected boolean hasActiveClearableNotifications() {
         return mNotificationData.hasActiveClearableNotifications();
-		
+    }
+
     protected void updateCarrierLabelVisibility() {
         if (!mShowCarrierInPanel) return;
 
