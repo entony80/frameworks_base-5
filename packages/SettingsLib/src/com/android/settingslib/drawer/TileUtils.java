@@ -116,7 +116,7 @@ public class TileUtils {
     public static List<DashboardCategory> getCategories(Context context,
             HashMap<Pair<String, String>, Tile> cache) {
         final long startTime = System.currentTimeMillis();
-		boolean setup = Global.getInt(context.getContentResolver(), Global.DEVICE_PROVISIONED, 0)
+        boolean setup = Global.getInt(context.getContentResolver(), Global.DEVICE_PROVISIONED, 0)
                 != 0;
         ArrayList<Tile> tiles = new ArrayList<>();
         UserManager userManager = UserManager.get(context);

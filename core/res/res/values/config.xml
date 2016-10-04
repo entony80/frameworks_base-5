@@ -2551,6 +2551,8 @@
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
     </string-array>
 	
+    <integer-array name="keypress_param_value"/>
+
     <!-- Configuartion to support SIM contact batch operation.-->
     <bool name="config_sim_phonebook_batch_operation">true</bool>
     <string-array name="origin_carrier_names">

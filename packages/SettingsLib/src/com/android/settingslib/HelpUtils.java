@@ -92,7 +92,7 @@ public class HelpUtils {
      */
     public static boolean prepareHelpMenuItem(final Activity activity, MenuItem helpMenuItem,
             String helpUriString, String backupContext) {
-		if (Global.getInt(activity.getContentResolver(), Global.DEVICE_PROVISIONED, 0) == 0) {
+        if (Global.getInt(activity.getContentResolver(), Global.DEVICE_PROVISIONED, 0) == 0) {
             return false;
         }
         if (TextUtils.isEmpty(helpUriString)) {
@@ -132,7 +132,7 @@ public class HelpUtils {
 
     public static Intent getHelpIntent(Context context, String helpUriString,
             String backupContext) {
-		if (Global.getInt(context.getContentResolver(), Global.DEVICE_PROVISIONED, 0) == 0) {
+        if (Global.getInt(context.getContentResolver(), Global.DEVICE_PROVISIONED, 0) == 0) {
             return null;
         }
         // Try to handle as Intent Uri, otherwise just treat as Uri.
