@@ -207,6 +207,9 @@
     <string name="shutdown_confirm_question" msgid="2906544768881136183">"Spegnere?"</string>
     <string name="reboot_safemode_title" msgid="7054509914500140361">"Riavvia in modalità provvisoria"</string>
     <string name="reboot_safemode_confirm" msgid="55293944502784668">"Riavviare in modalità provvisoria? Ciò comporterà la disattivazione di tutte le applicazioni di terze parti installate. Verranno ripristinate al prossimo riavvio."</string>
+     <string name="reboot_title">"Riavvio"</string>
+     <string name="reboot_confirm" product="tablet">"Il tablet si riavviato."</string>
+     <string name="reboot_confirm" product="default">"Il telefono si riavvierà."</string>
     <string name="recent_tasks_title" msgid="3691764623638127888">"Recenti"</string>
     <string name="no_recent_tasks" msgid="8794906658732193473">"Nessuna applicazione recente."</string>
     <string name="global_actions" product="tablet" msgid="408477140088053665">"Opzioni tablet"</string>
@@ -214,6 +217,7 @@
     <string name="global_actions" product="default" msgid="2406416831541615258">"Opzioni telefono"</string>
     <string name="global_action_lock" msgid="2844945191792119712">"Blocco schermo"</string>
     <string name="global_action_power_off" msgid="4471879440839879722">"Spegni"</string>
+     <string name="global_action_reboot">"Riavvio"</string>
     <string name="global_action_bug_report" msgid="7934010578922304799">"Segnalazione di bug"</string>
     <string name="bugreport_title" msgid="2667494803742548533">"Apri segnalazione bug"</string>
     <string name="bugreport_message" msgid="398447048750350456">"Verranno raccolte informazioni sullo stato corrente del dispositivo che saranno inviate sotto forma di messaggio email. Passerà un po\' di tempo prima che la segnalazione di bug aperta sia pronta per essere inviata; ti preghiamo di avere pazienza."</string>
